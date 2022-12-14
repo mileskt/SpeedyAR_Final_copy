@@ -1,0 +1,84 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Tue Dec 13 22:48:48 2022
+| Host         : EECS-DIGITAL-02 running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_timing -file /tmp/tmp.zdfiin/obj/placerpt_report_timing.rpt
+| Design       : top_level
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.547ns  (required time - arrival time)
+  Source:                 p_manager/addra1__0/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            p_manager/pixels_0/BRAM_reg_0_1/ENARDEN
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            15.385ns  (clk_out1_clk_wiz_0 rise@15.385ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        11.886ns  (logic 4.601ns (38.709%)  route 7.285ns (61.291%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.176ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.375ns = ( 14.010 - 15.385 ) 
+    Source Clock Delay      (SCD):    -0.726ns
+    Clock Pessimism Removal (CPR):    0.473ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.251ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.233     2.715    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.154    -4.439 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.719    -2.720    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.624 r  clk_gen/clkout1_buf/O
+                         net (fo=4559, estimated)     1.899    -0.726    p_manager/clk_65mhz
+    DSP48_X0Y12          DSP48E1                                      r  p_manager/addra1__0/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y12          DSP48E1 (Prop_dsp48e1_CLK_P[18])
+                                                      4.009     3.283 f  p_manager/addra1__0/P[18]
+                         net (fo=3, estimated)        1.596     4.879    p_manager/pixels_0/P[18]
+    SLICE_X10Y47         LUT4 (Prop_lut4_I0_O)        0.146     5.025 f  p_manager/pixels_0/BRAM_mux_sel_a_pos_0__0_i_1__0/O
+                         net (fo=11, estimated)       0.649     5.674    p_manager/pixels_0/BRAM_mux_sel_a_pos_0__0_i_1__0_n_0
+    SLICE_X9Y47          LUT6 (Prop_lut6_I0_O)        0.328     6.002 r  p_manager/pixels_0/BRAM_reg_0_0_i_1__0/O
+                         net (fo=5, estimated)        1.815     7.817    p_manager/pixels_0/BRAM_reg_0_0_i_1__0_n_0
+    SLICE_X9Y75          LUT3 (Prop_lut3_I2_O)        0.118     7.935 r  p_manager/pixels_0/BRAM_reg_0_1_ENARDEN_cooolgate_en_gate_43/O
+                         net (fo=1, estimated)        3.225    11.160    p_manager/pixels_0/BRAM_reg_0_1_ENARDEN_cooolgate_en_sig_26
+    RAMB36_X0Y32         RAMB36E1                                     r  p_manager/pixels_0/BRAM_reg_0_1/ENARDEN
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     15.385    15.385 r  
+    E3                                                0.000    15.385 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    15.385    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.796 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.171    17.967    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.404    10.563 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.633    12.196    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.287 r  clk_gen/clkout1_buf/O
+                         net (fo=4559, estimated)     1.722    14.010    p_manager/pixels_0/clk_65mhz
+    RAMB36_X0Y32         RAMB36E1                                     r  p_manager/pixels_0/BRAM_reg_0_1/CLKARDCLK
+                         clock pessimism              0.473    14.483    
+                         clock uncertainty           -0.130    14.353    
+    RAMB36_X0Y32         RAMB36E1 (Setup_ramb36e1_CLKARDCLK_ENARDEN)
+                                                     -0.645    13.708    p_manager/pixels_0/BRAM_reg_0_1
+  -------------------------------------------------------------------
+                         required time                         13.708    
+                         arrival time                         -11.160    
+  -------------------------------------------------------------------
+                         slack                                  2.547    
+
+
+
+

@@ -1,0 +1,109 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Tue Dec 13 23:14:57 2022
+| Host         : EECS-DIGITAL-44 running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_timing -file /tmp/tmp.eeM8C0/obj/placerpt_report_timing.rpt
+| Design       : top_level
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.390ns  (required time - arrival time)
+  Source:                 filtern/mconv/multiplied_red_cache_reg[2][2][3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            filtern/mconv/shifted_red_cache_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            15.385ns  (clk_out1_clk_wiz_0 rise@15.385ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        12.123ns  (logic 4.461ns (36.798%)  route 7.662ns (63.202%))
+  Logic Levels:           13  (CARRY4=7 LUT2=1 LUT3=3 LUT4=2)
+  Clock Path Skew:        -0.108ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.598ns = ( 13.786 - 15.385 ) 
+    Source Clock Delay      (SCD):    -1.010ns
+    Clock Pessimism Removal (CPR):    0.480ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.251ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.233     2.715    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.154    -4.439 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.719    -2.720    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.624 r  clk_gen/clkout1_buf/O
+                         net (fo=3991, estimated)     1.614    -1.010    filtern/mconv/clk_65mhz
+    SLICE_X49Y75         FDRE                                         r  filtern/mconv/multiplied_red_cache_reg[2][2][3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y75         FDRE (Prop_fdre_C_Q)         0.419    -0.591 r  filtern/mconv/multiplied_red_cache_reg[2][2][3]/Q
+                         net (fo=2, estimated)        1.662     1.071    filtern/mconv/multiplied_red_cache_reg_n_0_[2][2][3]
+    SLICE_X12Y75         LUT3 (Prop_lut3_I1_O)        0.323     1.394 r  filtern/mconv/shifted_red_cache1__0_carry__0_i_4/O
+                         net (fo=2, estimated)        0.863     2.257    filtern/mconv/shifted_red_cache1__0_carry__0_i_4_n_0
+    SLICE_X12Y76         LUT4 (Prop_lut4_I0_O)        0.355     2.612 r  filtern/mconv/shifted_red_cache1__0_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     2.612    filtern/mconv/shifted_red_cache1__0_carry__0_i_8_n_0
+    SLICE_X12Y76         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     3.125 r  filtern/mconv/shifted_red_cache1__0_carry__0/CO[3]
+                         net (fo=1, estimated)        0.000     3.125    filtern/mconv/shifted_red_cache1__0_carry__0_n_0
+    SLICE_X12Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.242 r  filtern/mconv/shifted_red_cache1__0_carry__1/CO[3]
+                         net (fo=1, estimated)        0.000     3.242    filtern/mconv/shifted_red_cache1__0_carry__1_n_0
+    SLICE_X12Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.359 r  filtern/mconv/shifted_red_cache1__0_carry__2/CO[3]
+                         net (fo=1, estimated)        0.000     3.359    filtern/mconv/shifted_red_cache1__0_carry__2_n_0
+    SLICE_X12Y79         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     3.516 f  filtern/mconv/shifted_red_cache1__0_carry__3/CO[1]
+                         net (fo=16, estimated)       1.603     5.119    filtern/mconv/shifted_red_cache1__0_carry__3_n_2
+    SLICE_X49Y83         LUT3 (Prop_lut3_I2_O)        0.358     5.477 r  filtern/mconv/shifted_red_cache1__136_carry__3_i_1/O
+                         net (fo=27, estimated)       0.853     6.330    filtern/mconv/shifted_red_cache1__136_carry__3_i_1_n_0
+    SLICE_X49Y81         LUT4 (Prop_lut4_I0_O)        0.332     6.662 r  filtern/mconv/shifted_red_cache1__136_carry__4_i_3/O
+                         net (fo=1, routed)           0.000     6.662    filtern/mconv/shifted_red_cache1__136_carry__4_i_3_n_0
+    SLICE_X49Y81         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.212 r  filtern/mconv/shifted_red_cache1__136_carry__4/CO[3]
+                         net (fo=1, estimated)        0.000     7.212    filtern/mconv/shifted_red_cache1__136_carry__4_n_0
+    SLICE_X49Y82         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.451 f  filtern/mconv/shifted_red_cache1__136_carry__5/O[2]
+                         net (fo=2, estimated)        0.801     8.252    filtern/mconv/shifted_red_cache1__0[26]
+    SLICE_X46Y83         LUT2 (Prop_lut2_I0_O)        0.302     8.554 r  filtern/mconv/shifted_red_cache2_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     8.554    filtern/mconv/shifted_red_cache2_carry__2_i_7_n_0
+    SLICE_X46Y83         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     9.087 f  filtern/mconv/shifted_red_cache2_carry__2/CO[3]
+                         net (fo=1, estimated)        1.179    10.266    filtern/mconv/shifted_red_cache2_carry__2_n_0
+    SLICE_X56Y88         LUT3 (Prop_lut3_I1_O)        0.146    10.412 r  filtern/mconv/shifted_red_cache[4]_i_1__0/O
+                         net (fo=5, estimated)        0.701    11.113    filtern/mconv/shifted_red_cache[4]_i_1__0_n_0
+    SLICE_X57Y84         FDRE                                         r  filtern/mconv/shifted_red_cache_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     15.385    15.385 r  
+    E3                                                0.000    15.385 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    15.385    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.796 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.171    17.967    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.404    10.563 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.633    12.196    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.287 r  clk_gen/clkout1_buf/O
+                         net (fo=3991, estimated)     1.499    13.786    filtern/mconv/clk_65mhz
+    SLICE_X57Y84         FDRE                                         r  filtern/mconv/shifted_red_cache_reg[0]/C
+                         clock pessimism              0.480    14.266    
+                         clock uncertainty           -0.130    14.136    
+    SLICE_X57Y84         FDRE (Setup_fdre_C_R)       -0.633    13.503    filtern/mconv/shifted_red_cache_reg[0]
+  -------------------------------------------------------------------
+                         required time                         13.503    
+                         arrival time                         -11.113    
+  -------------------------------------------------------------------
+                         slack                                  2.390    
+
+
+
+
